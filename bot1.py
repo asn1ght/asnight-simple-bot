@@ -91,12 +91,6 @@ markup_request = ReplyKeyboardMarkup(resize_keyboard=True).add(
 )
 
 
-@dp.message_handler(commands=['4'])
-async def process_hi6_command(message: types.Message):
-    await message.reply("Шестое - запрашиваем контакт и геолокацию\nЭти две кнопки не зависят друг от друга",
-                        reply_markup=markup_request)
-
-
 @dp.message_handler(commands=['rm'])
 async def process_rm_command(message: types.Message):
     await message.reply("Убираем шаблоны сообщений", reply_markup=ReplyKeyboardRemove())
@@ -105,6 +99,12 @@ async def process_rm_command(message: types.Message):
 @dp.message_handler(text="3")
 async def cmd2(message: types.Message):
     await message.reply("Бот мистрик")
+
+
+@dp.message_handler(commands=['4'])
+async def process_hi6_command(message: types.Message):
+    await message.reply("Запрашиваем контакт и геолокацию\nЭти две кнопки не зависят друг от друга",
+                        reply_markup=markup_request)
 
 
 @dp.message_handler(text='5')
