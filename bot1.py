@@ -95,6 +95,10 @@ markup_request = ReplyKeyboardMarkup(resize_keyboard=True).add(
 async def process_rm_command(message: types.Message):
     await message.reply("Убираем шаблоны сообщений", reply_markup=ReplyKeyboardRemove())
 
+@dp.message_handler(text="0")
+async def cmd2(message: types.Message):
+    await message.reply("САНЯ ЛОХХХХХ")
+
 
 @dp.message_handler(text="3")
 async def cmd2(message: types.Message):
